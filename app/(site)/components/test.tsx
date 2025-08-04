@@ -16,10 +16,10 @@ function VvTest() {
             className="h-full rounded"
           >
             <header>
-              <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl pt-8">
+              <h1 className="text-2xl  text-gray-900 sm:text-3xl pt-8 bold-text">
                 Golf Car Assembly Line
               </h1>
-              <h5 className="mt-4 max-w-md text-gray-600 font-bold">
+              <h5 className="mt-4 max-w-md text-gray-600 bold-text">
                 We manufacture and assemble multi-seater electric golf carts locally, incorporating high-quality Egyptian
                 materials and 100% Egyptian labor. Local components are integrated into the production process to
                 ensure superior quality and support national industry.
@@ -74,7 +74,7 @@ function VvTest() {
                       transition={{ duration: 0.3 }}
                     />
                     <div className="pt-3">
-                      <h3 className="text-xs text-black group-hover:underline group-hover:underline-offset-4">
+                      <h3 className="text-xs text-black group-hover:underline group-hover:underline-offset-4 regular-text">
                         {item.label}
                       </h3>
                     </div>

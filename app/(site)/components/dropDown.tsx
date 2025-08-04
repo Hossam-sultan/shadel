@@ -48,6 +48,18 @@ function DropDown() {
             <Link href="/machines">Machines</Link>
           </li>
 
+<li
+            onClick={handleClick}
+            className="font-semibold text-2xl hover:text-red-600 text-white "
+          >
+            <Link href="/#golf">Golf Car Assembly Line</Link>
+          </li><li
+            onClick={handleClick}
+            className="font-semibold text-2xl hover:text-red-600 text-white "
+          >
+            <Link href="/#vene">          Ventilation System 
+</Link>
+          </li>
           <li
             onClick={handleClick}
             className="font-semibold text-2xl hover:text-red-600 text-white"
