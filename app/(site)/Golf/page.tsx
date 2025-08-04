@@ -6,8 +6,8 @@ import { motion } from "framer-motion"
 
 function VvTest() {
   return (
-    <section id="golf" className="bg-gray-200">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 bold-text">
+    <section id="golf" className="">
+      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 bold-text pt-20">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8 pb-10 sm:pb-5 pt-10">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
@@ -45,7 +45,7 @@ function VvTest() {
 
         {/* Product Grid */}
         {[1, 2].map((group) => (
-          <ul key={group} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 bg-gray-200">
+          <ul key={group} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 ">
             {[
               { src: "/golf/g5.png", label: "Electric Bus With Closed Cabinet" },
               { src: "/golf/g3.png", label: "Electric Bus Open Design -12 Seats" },

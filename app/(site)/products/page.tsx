@@ -437,6 +437,42 @@ function AllProducts() {
                 </Link>
               </div>
             </m.div>
+             <m.div
+              initial={{ y: 250 }}
+              whileInView={{ y: 0 }}
+              transition={{
+                duration: 1,
+                type: "spring",
+                stiffness: 50,
+                delay: 0.15,
+              }}
+              className="flex flex-col rounded-2xl shadow-2xl overflow-hidden bg-white"
+            >
+              <div className="overflow-hidden md:h-[300px]">
+                <Image
+                  src={
+                    "/golf/g1.png"
+                  }
+                  alt="image"
+                  width={800}
+                  height={150}
+                  className=""
+                />
+              </div>
+              <div className="flex flex-col gap-6 px-6 pb-8">
+                <h2 className="text-2xl font-bold">Golf Cars</h2>
+                <p>
+                     We manufacture and assemble multi-seater electric golf carts locally, incorporating high-quality Egyptian
+                materials and 100% Egyptian labor.
+                </p>
+                <Link
+                  href={"/Golf"}
+                  className="bg-red-600 w-full rounded-xl text-white font-bold text-center py-4 hover:bg-gray-500 transition-all"
+                >
+                  See More
+                </Link>
+              </div>
+            </m.div>
             <m.div
               initial={{ y: 250 }}
               whileInView={{ y: 0 }}

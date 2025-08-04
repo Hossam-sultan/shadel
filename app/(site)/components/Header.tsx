@@ -168,21 +168,13 @@ function Header() {
                             <li className="text-sm text-black duration-100 hover:pl-2 hover:bg-gray-100 hover:text-red-600">
                             <Link
                               onClick={toggleMenu}
-                              href="/#golf"
+                              href="/Golf"
                               className="block px-4 py-2"
                             >
-                              Golf Car Line Assembly
+                              Golf Car 
                             </Link>
                           </li>
-                            <li className="text-sm text-black duration-100 hover:pl-2 hover:bg-gray-100 hover:text-red-600">
-                            <Link
-                              onClick={toggleMenu}
-                               href="/#vene"
-                              className="block px-4 py-2"
-                            >
-                             Ventilation System 
-                            </Link>
-                          </li>
+                           
                         </ul>
                       </div>
                     )}
@@ -313,6 +305,15 @@ function Header() {
                               className="block px-4 py-2"
                             >
                               indstrial Sectors
+                            </Link>
+                          </li> 
+                           <li className="text-sm text-black duration-100 hover:pl-2 hover:bg-gray-100 hover:text-red-600">
+                            <Link
+                              onClick={toggleMenu}
+                               href="/projects#vene"
+                              className="block px-4 py-2"
+                            >
+                             Ventilation System 
                             </Link>
                           </li>
                         </ul>
