@@ -52,7 +52,7 @@ function VvTest() {
               { src: "/golf/g2.png", label: "Golf Car- 6 Seats 150 A and More than 100 KM range" },
               { src: "/golf/g1.png", label: "Golf Car- 4 Seats 150 A and More than 100 KM range" },
               { src: "/golf/gg.png", label: "6-Seater Golf Cart" },
-              { src: "/golf/g6.png", label: "Lifted Off-Road Golf Cart" },
+              { src: "/golf/g6.jpeg", label: "Lifted Off-Road Golf Cart" },
               { src: "/golf/g9.png", label: "Standard 6-Seater Golf Cart" },
               { src: "/golf/ggg.png", label: "Standard 10-Seater Golf Cart" },
             ]

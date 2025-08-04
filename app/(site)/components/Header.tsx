@@ -75,6 +75,16 @@ function Header() {
                     {menuOpen && (
                       <div className="absolute left-0 hidden mb-2 transition-opacity duration-300 bg-white rounded-lg shadow-lg w-60 top-full group-hover:block -z-10 group-hover:z-20">
                         <ul className="">
+                              <li className="text-sm text-black duration-100 hover:pl-2 hover:bg-gray-100 hover:text-red-600">
+                            <Link
+                              onClick={toggleMenu}
+                              href="/Golf"
+                              className="block px-4 py-2"
+                            >
+                              Golf Car 
+                            </Link>
+                          </li>
+                           
                           <li className="text-sm text-black duration-300 hover:bg-gray-100 hover:pl-2 hover:text-red-600">
                             <Link
                               onClick={toggleMenu}
@@ -165,16 +175,7 @@ function Header() {
                               Heavy Steel
                             </Link>
                           </li>
-                            <li className="text-sm text-black duration-100 hover:pl-2 hover:bg-gray-100 hover:text-red-600">
-                            <Link
-                              onClick={toggleMenu}
-                              href="/Golf"
-                              className="block px-4 py-2"
-                            >
-                              Golf Car 
-                            </Link>
-                          </li>
-                           
+                        
                         </ul>
                       </div>
                     )}

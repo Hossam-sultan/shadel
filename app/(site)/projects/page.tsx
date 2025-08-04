@@ -117,7 +117,7 @@ export default function Projects() {
             >
               <div className=" h-[90%] w-[90%]">
                 <motion.img
-                  src="/projects/x-1.jpg"
+                  src="/golf/x3.jpg"
                   alt="Side of walnut card tray with card groove and recessed card area."
                   className="rounded-lg bg-gray-800 sm:object-cover sm:h-full "
                   variants={images}
@@ -533,7 +533,7 @@ export default function Projects() {
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8 bold-text">
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
       <div>
-        <div id="vene" className="max-w-lg md:max-w-none pt-32">
+        <div id="vene" className="max-w-lg md:max-w-none ">
           <h2 className="text-2xl font-semibold text-gray-900 sm:text-3xl bold-text">
           Ventilation System 
           </h2>
