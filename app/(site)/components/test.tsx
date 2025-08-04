@@ -74,7 +74,7 @@ function VvTest() {
                       transition={{ duration: 0.3 }}
                     />
                     <div className="pt-3">
-                      <h3 className="text-xs text-black group-hover:underline group-hover:underline-offset-4 regular-text">
+                      <h3 className="text-xs text-black group-hover:underline group-hover:underline-offset-4 bold-text">
                         {item.label}
                       </h3>
                     </div>
