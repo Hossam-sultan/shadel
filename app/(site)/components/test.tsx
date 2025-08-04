@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 function VvTest() {
   return (
     <section id="golf" className="bg-gray-200">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 bold-text">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8 pb-10 sm:pb-5 pt-10">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
