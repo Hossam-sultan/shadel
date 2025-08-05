@@ -54,7 +54,7 @@ function VvTest() {
               { src: "/golf/gg.png", label: "6-Seater Golf Cart" },
               { src: "/golf/g6.jpeg", label: "Lifted Off-Road Golf Cart" },
               { src: "/golf/g9.png", label: "Standard 6-Seater Golf Cart" },
-              { src: "/golf/ggg.png", label: "Standard 10-Seater Golf Cart" },
+              { src: "/golf/ggg.png", label: "Standard 8-Seater Golf Cart" },
             ]
               .slice((group - 1) * 4, group * 4)
               .map((item, i) => (

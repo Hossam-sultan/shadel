@@ -115,7 +115,7 @@ export default function Projects() {
               whileInView="show"
               className="grid grid-cols-2 grid-rows-3   sm:grid-cols-2 lg:grid-cols-2"
             >
-              <div className=" h-[90%] w-[90%]">
+              <div className=" h-[90%] w-[80%]">
                 <motion.img
                   src="/golf/x3.jpg"
                   alt="Side of walnut card tray with card groove and recessed card area."
