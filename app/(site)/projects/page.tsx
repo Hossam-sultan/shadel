@@ -117,7 +117,7 @@ export default function Projects() {
             >
               <div className=" h-[90%] w-[80%]">
                 <motion.img
-                  src="/golf/x3.jpg"
+                  src="/projects/x3.jpg"
                   alt="Side of walnut card tray with card groove and recessed card area."
                   className="rounded-lg bg-gray-800 sm:object-cover sm:h-full "
                   variants={images}
