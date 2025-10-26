@@ -1,55 +1,40 @@
 "use client";
-
 import { useCart } from "@/app/context/CartContext";
 import Header from "../(site)/components/Header";
 import Image from "next/image";
 import { motion as m, LazyMotion, domAnimation } from "framer-motion";
 import { useRouter } from "next/navigation"; // ✅ أضف دي هنا
+import "../globals.css";
 
 export default function CartPage() {
   const { cartItems, removeFromCart, clearCart } = useCart();
   const router = useRouter(); // ✅ استخدم الرواتر
 
-  
   const handleClearCart = () => {
     clearCart(); // يمسح السلة
     router.push("/"); // ✅ يرجع للهوم
   };
+
   return (
-    <div className="min-h-screen  relative overflow-hidden">
-      {/* 🧭 Header */}
+    <div className="min-h-screen bg-gray-50 relative overflow-hidden">
       <Header />
 
-      {/* 🖼️ الخلفية + العنوان */}
       <div className="relative w-full h-[50vh] flex justify-center items-center">
-    {/*  <Image
-          src="/bg/serve.jpg"
-          alt="bg"
-          fill
-          className="object-cover"
-          style={{
-            zIndex: "-1",
-            top: "0",
-            right: "0",
-            filter: "brightness(70%)", // تغميق خفيف علشان النص يبان
-          }}
-        />*/}
+       
         <LazyMotion features={domAnimation}>
           <m.div
             initial={{ y: -150, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, type: "spring", stiffness: 50 }}
             className="text-center"
-
           >
-            <h1 className="text-gray text-4xl md:text-6xl font-bold drop-shadow-lg">
+            <h1 className="text-black text-4xl md:text-6xl font-bold drop-shadow-lg">
               Your Cart
             </h1>
           </m.div>
         </LazyMotion>
       </div>
 
-      {/* 🛒 محتوى الكارت */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         {cartItems.length === 0 ? (
           <div className="text-center text-gray-500 mt-20 text-lg">
@@ -57,7 +42,6 @@ export default function CartPage() {
           </div>
         ) : (
           <>
-            {/* شبكة المنتجات */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {cartItems.map((item) => (
                 <m.div
@@ -85,14 +69,13 @@ export default function CartPage() {
               ))}
             </div>
 
-            {/* زرار مسح الكارت */}
            <div className="text-center mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-   <button
-                onClick={handleClearCart}
-                className="bg-black text-white px-6 py-3 rounded-full text-sm hover:bg-gray-800 transition-all"
-              >
-                Clear Cart
-              </button>
+  <button
+    onClick={clearCart}
+    className="bg-black text-white px-6 py-3 rounded-full text-sm hover:bg-gray-800 transition-all"
+  >
+    Clear Cart
+  </button>
 
   <button
     onClick={() => window.location.href = "/checkout"}

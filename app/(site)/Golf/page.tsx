@@ -1,13 +1,39 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import React from "react"
-import { motion } from "framer-motion"
+import Image from "next/image";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ShoppingCart } from "lucide-react";
+import { useCart } from "@/app/context/CartContext";
 
 function VvTest() {
+  const { addToCart } = useCart();
+  const [addedItems, setAddedItems] = useState<string[]>([]);
+
+  const products = [
+    { src: "/golf/g5.png", label: "Electric Bus With Closed Cabinet" },
+    { src: "/golf/g3.png", label: "Electric Bus Open Design -12 Seats" },
+    { src: "/golf/g2.png", label: "Golf Car - 6 Seats 150A 100KM Range" },
+    { src: "/golf/g1.png", label: "Golf Car - 4 Seats 150A 100KM Range" },
+    { src: "/golf/gg.png", label: "6-Seater Golf Cart" },
+    { src: "/golf/g6.jpeg", label: "Lifted Off-Road Golf Cart" },
+  ];
+
+  const handleAddToCart = (item: { src: string; label: string }) => {
+    addToCart({
+      id: item.label,
+      title: item.label,
+      image: item.src,
+      price: 0,
+      description: "Golf Car Model",
+    });
+    setAddedItems((prev) => [...prev, item.label]);
+  };
+
   return (
-    <section id="golf" className="">
+    <section id="golf" className="pb-20">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 bold-text pt-20">
+        {/* Header */}
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8 pb-10 sm:pb-5 pt-10">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
@@ -16,13 +42,12 @@ function VvTest() {
             className="h-full rounded"
           >
             <header>
-              <h1 className="text-2xl  text-gray-900 sm:text-3xl pt-8 bold-text">
+              <h1 className="text-2xl text-gray-900 sm:text-3xl pt-8 bold-text">
                 Golf Car Assembly Line
               </h1>
               <h5 className="mt-4 max-w-md text-gray-600 bold-text">
-                We manufacture and assemble multi-seater electric golf carts locally, incorporating high-quality Egyptian
-                materials and 100% Egyptian labor. Local components are integrated into the production process to
-                ensure superior quality and support national industry.
+                We manufacture and assemble multi-seater electric golf carts locally,
+                incorporating high-quality Egyptian materials and 100% Egyptian labor.
               </h5>
             </header>
           </motion.div>
@@ -44,48 +69,54 @@ function VvTest() {
         </div>
 
         {/* Product Grid */}
-        {[1, 2].map((group) => (
-          <ul key={group} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 ">
-            {[
-              { src: "/golf/g5.png", label: "Electric Bus With Closed Cabinet" },
-              { src: "/golf/g3.png", label: "Electric Bus Open Design -12 Seats" },
-              { src: "/golf/g2.png", label: "Golf Car- 6 Seats 150 A and More than 100 KM range" },
-              { src: "/golf/g1.png", label: "Golf Car- 4 Seats 150 A and More than 100 KM range" },
-              { src: "/golf/gg.png", label: "6-Seater Golf Cart" },
-              { src: "/golf/g6.jpeg", label: "Lifted Off-Road Golf Cart" },
-              { src: "/golf/g9.png", label: "Standard 6-Seater Golf Cart" },
-              { src: "/golf/ggg.png", label: "Standard 8-Seater Golf Cart" },
-            ]
-              .slice((group - 1) * 4, group * 4)
-              .map((item, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {products.map((item, i) => (
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="group relative bg-white rounded-2xl p-4 shadow-lg flex flex-col items-center text-center"
+            >
+              <div className="relative w-full h-[300px] overflow-hidden rounded-xl">
+                <motion.img
+                  src={item.src}
+                  alt={item.label}
+                  className="h-full w-full object-contain"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </div>
+
+              <div className="pt-4 flex justify-between items-center w-full">
+                <h3 className="text-md text-black bold-text truncate max-w-[80%]">
+                  {item.label}
+                </h3>
+
+                {/* 🛒 Cart Icon */}
+                <button
+                  onClick={() => handleAddToCart(item)}
+                  className={`transition ${
+                    addedItems.includes(item.label)
+                      ? "text-red-600"
+                      : "text-gray-700 hover:text-red-600"
+                  }`}
+                  title={
+                    addedItems.includes(item.label)
+                      ? "Added to cart"
+                      : "Add to cart"
+                  }
                 >
-                  <a href="#" className="group block overflow-hidden">
-                    <motion.img
-                      src={item.src}
-                      alt=""
-                      className="h-[350px] w-full object-contain sm:h-[450px]"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                    <div className="pt-3">
-                      <h3 className="text-xs text-black group-hover:underline group-hover:underline-offset-4 bold-text">
-                        {item.label}
-                      </h3>
-                    </div>
-                  </a>
-                </motion.li>
-              ))}
-          </ul>
-        ))}
+                  <ShoppingCart size={22} />
+                </button>
+              </div>
+            </motion.li>
+          ))}
+        </ul>
       </div>
     </section>
-  )
+  );
 }
 
-export default VvTest
+export default VvTest;
