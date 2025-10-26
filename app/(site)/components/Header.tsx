@@ -6,6 +6,10 @@ import { LazyMotion, domAnimation, m } from "framer-motion"
 import Search from "./Search"
 import { useState } from "react"
 import Script from "next/script"
+import { useCart } from "@/app/context/CartContext";
+import { ShoppingCart } from "lucide-react";
+
+
 function Header() {
   const [menuOpen, setMenuOpen] = useState(true)
 
@@ -16,6 +20,8 @@ function Header() {
   // const closeMenu = () => {
   //   setMenuOpen(false)
   // }
+  const { cartCount } = useCart();
+
 
   return (
     <LazyMotion features={domAnimation}>
@@ -393,7 +399,17 @@ function Header() {
                 </li>
               </ul>
             </nav>
-            <DropDown />
+          
+           <li className="relative cursor-pointer list-none">
+      <Link href="/cart">
+        <ShoppingCart size={26} className="text-black hover:text-red-600" />
+        {cartCount > 0 && (
+          <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full px-1.5">
+            {cartCount}
+          </span>
+        )}
+      </Link>
+    </li>  <DropDown />
           </m.header>
         </div>
       </nav>

@@ -6,6 +6,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { Popup } from "./Popup"
 import { useState } from "react"
+import { useCart } from "@/app/context/CartContext";
+import { ShoppingCart } from "lucide-react";
+
 
 type Props = {
   items: ProductMachineType[]
@@ -15,7 +18,10 @@ type Props = {
 function Products({ items, name }: Props) {
   const [popupItme, setPopupItem] = useState("")
   const [toggle, setToggle] = useState(false)
+  const { addToCart } = useCart();
+
   // const [pname, setName] = useState("Machines")
+const [addedItems, setAddedItems] = useState<string[]>([]);
 
   return (
     <>
@@ -63,12 +69,43 @@ function Products({ items, name }: Props) {
               </div>
               <div className="flex flex-col gap-6 px-5 pb-10 justify-between">
                 <div>
-                  <div
-                    title={item.name}
-                    className="font-bold text-lg md:text-2xl w-72 truncate "
-                  >
-                    {item.name}
-                  </div>
+                 <div className="flex items-center justify-between w-full">
+  <div
+    title={item.name}
+    className="font-bold text-lg md:text-2xl truncate max-w-[80%]"
+  >
+    {item.name}
+  </div>
+
+<button
+  onClick={() => {
+    const newItem = {
+      id: item._id || item.name,
+      title: item.name,
+      image: item.mainImage || "",
+      price: 0,
+      description: item.description || "",
+    };
+
+    addToCart(newItem);
+
+    // لو مش مضاف قبل كده ضيفه في الليست
+    if (!addedItems.includes(newItem.id)) {
+      setAddedItems((prev) => [...prev, newItem.id]);
+    }
+  }}
+  className="transition"
+  title="Add to cart"
+>
+  <ShoppingCart
+    size={24}
+    color={addedItems.includes(item._id || item.name) ? "red" : "black"}
+  />
+</button>
+
+
+</div>
+
                   {item.category === "" && (
                     <div className=" text-gray-500"> {item.description}</div>
                   )}

@@ -30,6 +30,6 @@
     ".next/types/**/*.ts",
     "app/(site)/components/projects/app.tsx",
     "app/(site)/components/projects/slidesshow.js"
-  ],
+, "app/context/CartContext.js"  ],
   "exclude": ["node_modules"]
 }
