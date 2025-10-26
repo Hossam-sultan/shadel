@@ -4,10 +4,17 @@ import { useCart } from "@/app/context/CartContext";
 import Header from "../(site)/components/Header";
 import Image from "next/image";
 import { motion as m, LazyMotion, domAnimation } from "framer-motion";
+import { useRouter } from "next/navigation"; // ✅ أضف دي هنا
 
 export default function CartPage() {
   const { cartItems, removeFromCart, clearCart } = useCart();
+  const router = useRouter(); // ✅ استخدم الرواتر
 
+  
+  const handleClearCart = () => {
+    clearCart(); // يمسح السلة
+    router.push("/"); // ✅ يرجع للهوم
+  };
   return (
     <div className="min-h-screen  relative overflow-hidden">
       {/* 🧭 Header */}
@@ -80,12 +87,12 @@ export default function CartPage() {
 
             {/* زرار مسح الكارت */}
            <div className="text-center mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-  <button
-    onClick={clearCart}
-    className="bg-black text-white px-6 py-3 rounded-full text-sm hover:bg-gray-800 transition-all"
-  >
-    Clear Cart
-  </button>
+   <button
+                onClick={handleClearCart}
+                className="bg-black text-white px-6 py-3 rounded-full text-sm hover:bg-gray-800 transition-all"
+              >
+                Clear Cart
+              </button>
 
   <button
     onClick={() => window.location.href = "/checkout"}
