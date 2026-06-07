@@ -44,7 +44,7 @@ function Footer() {
                 Oman/ <span className="underline">+968 9932 9189</span>
               </b>
               <b className="hover:text-red-600">
-                USA /<span className="underline ml-3"> +1 (407) 450-4508</span>
+                USA /<span className="underline ml-3"> +1 407 450 4508</span>
               </b>
               <b className="hover:text-red-600">
                 Swiss/ <span className="underline">+4177 549 80 75</span>
