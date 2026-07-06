@@ -17,7 +17,7 @@ function Footer() {
                 Egypt/ <span className="underline">+2 048 2430 020</span>
               </b>
               <b className="hover:text-red-600">
-                <span className="underline ml-14"> +2 0121 244 4543</span>
+                <span className="underline ml-14"> +2 0111 666 2474</span>
               </b>
             </div>
           </div>

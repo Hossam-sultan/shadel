@@ -22,13 +22,13 @@ export default function UserLayout({
 }) {
   return (
     <html lang="en">
-      {/* <body className={inter.className}>
+      <body className={inter.className}>
         <Header />
         <main className="min-h-[70vh]">{children}</main>
         <Footer />
         <Analytics />
         <SpeedInsights />
-      </body> */}
+      </body> 
     </html>
   )
 }
