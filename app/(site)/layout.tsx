@@ -9,9 +9,16 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 export const metadata = {
   title: "Shadel",
   description:
-    "Top-quality sheet and press metal solutions for stylish designs.",
+    "Professional metal fabrication services in Egypt. Custom sheet metal and industrial solutions.",
   icons: {
     icon: "/we.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    noarchive: true,
+    nosnippet: true,
+    maxSnippet: 0,
   },
 }
 
@@ -28,7 +35,8 @@ export default function UserLayout({
         <Footer />
         <Analytics />
         <SpeedInsights />
-      </body> 
+      </body>
     </html>
   )
 }
+//https://search.google.com/search-console/remove-outdated-content
