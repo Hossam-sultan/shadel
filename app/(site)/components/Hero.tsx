@@ -70,8 +70,7 @@ function Hero() {
                 ensuring customer satisfaction.
               </m.p>
               <div className="">
-             
-                <Link href="https://drive.google.com/file/d/1cMpvC3Pbugh2NnlPJlTOa2sEGCXe7UPJ/preview">
+                <Link href="https://drive.google.com/file/d/10Hhojptw7q4Cb34ewRWUHsv9YF0bDQYz/preview">
                   <m.button className="mb-2 bhero bold-text ">
                     SHADEL CATALOGUE
                   </m.button>
